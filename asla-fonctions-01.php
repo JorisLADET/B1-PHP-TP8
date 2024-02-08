@@ -7,7 +7,6 @@
 	}
 	
 	// Exercice 2
-	// Votre code ici
 	
 	function getNom( $produit ){
 		list( $code , $nom , $prixUnit , $promo ) = explode( ":" , $produit ) ;
@@ -20,11 +19,9 @@
 		list( $code , $nom , $prixUnit , $promo ) = explode( ":" , $produit ) ;
 		
 		if( $promo == 0 ){
-			// Votre code ici
 			return $promo ;
 		}
 		else {
-			// Votre code ici
 			return $promo;
 		}
 	}
@@ -32,7 +29,6 @@
 	// Exercice 4	
 	function estUnPetitPrix( $produit , $petitPrix ){
 		list( $code , $nom , $prixUnit , $promo ) = explode( ":" , $produit ) ;	
-		// Votre code ici
 		 if ($prixUnit > $petitPrix) {
 	        return False;
 	    } else {
@@ -42,7 +38,6 @@
 	
 	// Exercice 5
 	function calculerPrixPromo( $produit ){
-		// Votre code ici
 		list( $code , $nom , $prixUnit , $promo ) = explode( ":" , $produit ) ;
 		
 		$prixPromo = $prixUnit - ($prixUnit * $promo / 100);
@@ -89,6 +84,31 @@ FIN_HTML;
 	function genererTableHTML( $produit , $nomFichier = "" ){
 		
 		// Votre code ici
+			$html = <<<FIN_HTML
+		
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Asla</title>
+</head>
+
+<body>
+
+$genererTableHTm
+
+
+
+
+
+
+
+</body>
+
+
+
+FIN_HTML;
 		
 	}
 
@@ -104,9 +124,7 @@ FIN_HTML;
 			
 		$codeProduit1 = getCode( $produitTest1 ) ;
 		echo "Code du produit 1 : $codeProduit1\n" ;
-		
-		// Votre code ici (code de test avec le second produit)
-		
+				
 		$codeProduit2 = getCode( $produitTest2 ) ;
 		echo "Code du produit 2 : $codeProduit2\n" ;
 		
@@ -163,7 +181,7 @@ FIN_HTML;
 		else {
 			echo "Pas de promotion pour le produit $nomProduit1 n'est pas en promotion.\n" ;
 		}
-		
+			
 		if( estEnPromo( $produitTest2 ) == TRUE ){
 			$prixPromo2 = calculerPrixPromo( $produitTest2 ) ;
 			echo "Le produit $nomProduit2 est proposé au prix promotionnel de $prixPromo2 €\n" ;
@@ -174,17 +192,19 @@ FIN_HTML;
 		
 		// Exercice 6
 		echo "\n6.a) -------------------------------------\n" ;
-		#$codeHTML = genererListeHTML( $produitTest1 ) ;
-		#echo "Code HTML généré :\n$codeHTML\n" ;
+		$codeHTML = genererListeHTML( $produitTest1 ) ;
+		echo "Code HTML généré :\n$codeHTML\n" ;
 		
 		echo "\n6.b) -------------------------------------\n" ;
-		#$codeHTML = genererListeHTML( $produitTest2 , "vueProduitListe" ) ;
-		#echo "Code HTML généré :\n$codeHTML\n" ;
+		$codeHTML = genererListeHTML( $produitTest2 , "vueProduitListe" ) ;
+		echo "Code HTML généré :\n$codeHTML\n" ;
 		
 		// Exercice 7
 		echo "\n7.a) -------------------------------------\n" ;
-		// Votre code ici
-		
+		$codeHTML = genererTableHTML($produitTest1, "vue-produit");
+	    echo "Code HTML généré :\n$codeHTML\n";
+	    
+	    		
 		echo "\n7.b) -------------------------------------\n" ;
 		// Votre code ici
 	}
